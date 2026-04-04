@@ -26,4 +26,22 @@ int main(){
     window.setView(view);
     Texture backgroundTexture;
     backgroundTexture.loadFromFile("graphics/background.png");
+
+    Sprite backgroundSprite;
+    backgroundSprite.setTexture(backgroundTexture);
+    backgroundSprite.setPosition(0, 0);
+
+    Texture treeTexture;
+    treeTexture.loadFromFile("graphics/tree.png");
+
+    Sprite treeSprite;
+    treeSprite.setTexture(treeTexture);
+    treeSprite.setPosition(810, 0);
+
+    Texture beeTexture;
+    beeTexture.loadFromFile("graphics/bee.png");
+
+    Sprite beeSprite;
+    beeSprite.setTexture(beeTexture);
+    beeSprite.setPosition(2000, 800);
 }
