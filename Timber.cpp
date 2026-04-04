@@ -15,3 +15,15 @@ enum class side
 };
 side branchPositions[NUM_BRANCHES];
 Sprite Branches[NUM_BRANCHES];
+
+int main(){
+    // Create Video Mode Object
+    // VideoMode vm(1920,1080);
+    VideoMode vm = VideoMode::getDesktopMode();
+    // Rendering window
+    RenderWindow window(vm, "Timber!!!");
+    View view(FloatRect(0, 0, 1920, 1080));
+    window.setView(view);
+    Texture backgroundTexture;
+    backgroundTexture.loadFromFile("graphics/background.png");
+}
