@@ -79,4 +79,13 @@ int main(){
     Clock clock;
     float timeRemaining = 6.0f;
     bool paused = true;
+
+    RectangleShape timeBar;
+    float timeBarStartWidth = 400.0f;
+    float timeBarHeight = 80.0f;
+
+    timeBar.setSize(Vector2f(timeBarStartWidth, timeBarHeight));
+    timeBar.setFillColor(Color::Red);
+    timeBar.setPosition(1920 / 2 - timeBarStartWidth / 2.0, 980);
+    float timeBarWidthPerSecond = timeBarStartWidth / timeRemaining;
 }
