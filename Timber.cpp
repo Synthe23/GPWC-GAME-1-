@@ -63,4 +63,20 @@ int main(){
     Sprite cloudSprite2;
     cloudSprite2.setTexture(cloudTexture);
     cloudSprite2.setPosition(0, 150);
+
+    bool cloudSpriteActive2 = false;
+    float cloudSpriteSpeed2 = 0.0f;
+    float cloudSpriteHeight2 = 0.0f;
+
+    Sprite cloudSprite3;
+    cloudSprite3.setTexture(cloudTexture);
+    cloudSprite3.setPosition(0, 300);
+
+    bool cloudSpriteActive3 = false;
+    float cloudSpriteSpeed3 = 0.0f;
+    float cloudSpriteHeight3 = 0.0f;
+
+    Clock clock;
+    float timeRemaining = 6.0f;
+    bool paused = true;
 }
