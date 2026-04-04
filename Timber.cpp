@@ -88,4 +88,20 @@ int main(){
     timeBar.setFillColor(Color::Red);
     timeBar.setPosition(1920 / 2 - timeBarStartWidth / 2.0, 980);
     float timeBarWidthPerSecond = timeBarStartWidth / timeRemaining;
+
+    int score = 0;
+    Text scoreText;
+    Font font;
+    font.loadFromFile("font/KOMIKAP_.ttf");
+    scoreText.setFont(font);
+    scoreText.setCharacterSize(75);
+    scoreText.setFillColor(Color::White);
+    scoreText.setString("Score = 0");
+    scoreText.setPosition(20, 20);
+
+    Text messageText;
+    messageText.setFont(font);
+    messageText.setFillColor(Color::White);
+    messageText.setCharacterSize(100);
+    messageText.setString("Press Enter to Start the Game");
 }
