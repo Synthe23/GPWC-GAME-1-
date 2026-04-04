@@ -120,4 +120,21 @@ int main(){
         Branches[i].setPosition(-2000, -2000);
         Branches[i].setOrigin(220, 20);
     }
+
+    //*******Player
+    Texture texturePlayer;
+    texturePlayer.loadFromFile("graphics/player.png");
+    Sprite spritePlayer;
+    spritePlayer.setTexture(texturePlayer);
+    spritePlayer.setPosition(580, 720);
+
+    //*******Side of the Player
+    side sidePlayer = side::LEFT;
+
+    //*******Grave stone
+    Texture textureRIP;
+    textureRIP.loadFromFile("graphics/rip.png");
+    Sprite spriteRIP;
+    spriteRIP.setTexture(textureRIP);
+    spriteRIP.setPosition(600, 860);
 }
