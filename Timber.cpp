@@ -44,4 +44,23 @@ int main(){
     Sprite beeSprite;
     beeSprite.setTexture(beeTexture);
     beeSprite.setPosition(2000, 800);
+
+    bool beeActive = false;
+    float beeSpeed = 0.0f;
+    float beeHeight = 0.0f;
+
+    Texture cloudTexture;
+    cloudTexture.loadFromFile("graphics/cloud.png");
+
+    Sprite cloudSprite1;
+    cloudSprite1.setTexture(cloudTexture);
+    cloudSprite1.setPosition(0, 0);
+
+    bool cloudSpriteActive1 = false;
+    float cloudSpriteSpeed1 = 0.0f;
+    float cloudSpriteHeight1 = 0.0f;
+
+    Sprite cloudSprite2;
+    cloudSprite2.setTexture(cloudTexture);
+    cloudSprite2.setPosition(0, 150);
 }
