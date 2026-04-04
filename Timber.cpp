@@ -104,4 +104,20 @@ int main(){
     messageText.setFillColor(Color::White);
     messageText.setCharacterSize(100);
     messageText.setString("Press Enter to Start the Game");
+
+    FloatRect textRect = messageText.getLocalBounds();
+    messageText.setOrigin(textRect.left + textRect.width / 2.0, textRect.top + textRect.height / 2.0);
+    messageText.setPosition(1920 / 2.0, 1080 / 2.0);
+
+    // Branches
+    Texture branchTexture;
+    branchTexture.loadFromFile("graphics/branch.png");
+
+    for (int i = 0; i < NUM_BRANCHES; i++)
+    {
+
+        Branches[i].setTexture(branchTexture);
+        Branches[i].setPosition(-2000, -2000);
+        Branches[i].setOrigin(220, 20);
+    }
 }
