@@ -229,7 +229,81 @@ int main(){
             //*******Make acceptInput true
             acceptInput = true;
         }
+        //*******Wrap the player-controls right and left cursor keys
+        //*******to make sure Game is accepting input properly
+        if (acceptInput)
+        {
+            //*******Handle Right Cursor Key
+            if (Keyboard::isKeyPressed(Keyboard::Right))
+            {
+                //*******update score
+                score++;
+
+                //*******update time remaining
+                timeRemaining += 2 / score + .15;
+
+                //*******set the player side to Right
+                sidePlayer = side::RIGHT;
+
+                //*******set the player position
+                spritePlayer.setPosition(1200, 720);
+
+                //*******set the Axe position
+                spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+
+                //*******set the log position, log-Speed on X to fly on the left, logActive enabled
+                spriteLog.setPosition(810, 720);
+                logSpeedX = -5000;
+                logActive = true;
+
+                //*******update branches
+                updateBranches(score);
+
+                //*******acceptInput to false
+                acceptInput = false;
+
+                //*******play a chop sound
+                chopSound.play();
+            }
+
+            //*******Handle Left Cursor Key
+            if (Keyboard::isKeyPressed(Keyboard::Left))
+            {
+
+                //*******update score
+                score++;
+
+                //*******update time remaining
+                timeRemaining += 2 / score + .15;
+
+                //*******set the player side to Left
+                sidePlayer = side::LEFT;
+
+                //*******set the player position
+                spritePlayer.setPosition(580, 720);
+
+                //*******set the Axe position
+                spriteAxe.setPosition(AXE_POSITION_LEFT, spriteAxe.getPosition().y);
+
+                //*******set the log position, log-Speed on X to fly on the right, logActive enabled
+                spriteLog.setPosition(810, 720);
+                logSpeedX = 5000;
+                logActive = true;
+
+                //*******update branches
+                updateBranches(score);
+
+                //*******acceptInput to false
+                acceptInput = false;
+
+                //*******play a chop sound
+                chopSound.play();
+            }
+        }
+
     }
+
+    
     
 }
 
