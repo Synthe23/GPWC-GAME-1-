@@ -184,6 +184,52 @@ int main(){
     Sound deathSound;
     deathSound.setBuffer(deathBuffer);
 
+    while (window.isOpen())
+    {
+
+        //*******Handle user input
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::KeyReleased && !paused)
+            {
+                acceptInput = true;
+                spriteAxe.setPosition(2000, spriteAxe.getPosition().y);
+            }
+        }
+
+        // Handle the Players input
+        if (Keyboard::isKeyPressed(Keyboard::Escape))
+        {
+            window.close();
+        }
+
+        // start the game
+        if (Keyboard::isKeyPressed(Keyboard::Return))
+        {
+
+            paused = false;
+            // Reset time
+            timeRemaining = 6;
+            //*******Reset score
+            score = 0;
+
+            //*******Make all branches disappear
+            for (int i = 0; i < NUM_BRANCHES; i++)
+            {
+                branchPositions[i] = side::NONE;
+            }
+
+            //*******Make Grave Stone hidden
+            spriteRIP.setPosition(675, 2000);
+
+            //*******Move the player into the position
+            spritePlayer.setPosition(580, 720);
+
+            //*******Make acceptInput true
+            acceptInput = true;
+        }
+    }
     
 }
 
