@@ -373,7 +373,29 @@ int main(){
                     cloudSpriteActive1 = false;
                 }
             }
-   
+   // Cloud 2
+
+            if (!cloudSpriteActive2)
+            {
+                // Set the cloud's speed, height and position
+                srand((int)time(0) * 20);
+                cloudSpriteSpeed2 = rand() % 200;
+
+                srand((int)time(0) * 20);
+                cloudSpriteHeight2 = rand() % 300 - 150;
+
+                cloudSprite1.setPosition(-200, cloudSpriteHeight2);
+                cloudSpriteActive2 = true;
+            }
+            else
+            {
+                // Move the cloud
+                cloudSprite2.setPosition(cloudSprite2.getPosition().x + cloudSpriteSpeed2 * dt.asSeconds(), cloudSprite2.getPosition().y);
+                if (cloudSprite2.getPosition().x > 1920)
+                {
+                    cloudSpriteActive2 = false;
+                }
+            }
 
     }
 
