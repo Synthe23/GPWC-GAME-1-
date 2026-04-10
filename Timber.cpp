@@ -137,4 +137,53 @@ int main(){
     Sprite spriteRIP;
     spriteRIP.setTexture(textureRIP);
     spriteRIP.setPosition(600, 860);
+
+    //*******Axe
+    Texture textureAxe;
+    textureAxe.loadFromFile("graphics/axe.png");
+    Sprite spriteAxe;
+    spriteAxe.setTexture(textureAxe);
+    spriteAxe.setPosition(700, 830);
+
+    //*******Line up the Axe with the Tree
+    const int AXE_POSITION_LEFT = 700;
+    const int AXE_POSITION_RIGHT = 1075;
+
+    //*******Flying Log
+    Texture textureLog;
+    textureLog.loadFromFile("graphics/log.png");
+    Sprite spriteLog;
+    spriteLog.setTexture(textureLog);
+    spriteLog.setPosition(810, 720);
+
+    //*******Other declarations for flying Log
+    bool logActive = false;
+    float logSpeedX = 1000;
+    float logSpeedY = -1500;
+
+    //*******Player Input
+    bool acceptInput = false;
+
+    //*** Prepare the sounds
+    SoundBuffer chopBuffer;
+    chopBuffer.loadFromFile("sound/chop.wav");
+    SoundBuffer ootBuffer;
+    ootBuffer.loadFromFile("sound/out_of_time.wav");
+    SoundBuffer deathBuffer;
+    deathBuffer.loadFromFile("sound/death.wav");
+
+    //*** chopping
+    Sound chopSound;
+    chopSound.setBuffer(chopBuffer);
+
+    //*** Out of time
+    Sound ootSound;
+    ootSound.setBuffer(ootBuffer);
+
+    //*** Sound of death
+    Sound deathSound;
+    deathSound.setBuffer(deathBuffer);
+
+    
 }
+
