@@ -299,6 +299,54 @@ int main(){
                 //*******play a chop sound
                 chopSound.play();
             }
+            // Update the Scene
+
+        if (!paused)
+        {
+            // Update the scene to start
+
+            Time dt = clock.restart();
+            timeRemaining -= dt.asSeconds();
+
+            timeBar.setSize(Vector2f(timeBarWidthPerSecond * timeRemaining, timeBarHeight));
+
+            if (timeRemaining <= 0.0f)
+            {
+                paused = true;
+
+                //*******Show "Out of Time!!!" message at the center of the window
+                messageText.setString("Out of Time!!!");
+                textRect = messageText.getLocalBounds();
+                messageText.setOrigin(textRect.left + textRect.width / 2.0, textRect.top + textRect.height / 2.0);
+                messageText.setPosition(window.getSize().x / 2.0, window.getSize().y / 2.0);
+
+                //*******play "out of time" sound
+                ootSound.play();
+            }
+
+            // Handling bee
+
+            if (!beeActive)
+            {
+                // Set the bee's speed, height and position
+                srand((int)time(0) * 10);
+                beeSpeed = (rand() % 200) + 200;
+
+                srand((int)time(0) * 20);
+                beeHeight = (rand() % 500) + 500;
+
+                beeSprite.setPosition(2000, beeHeight);
+                beeActive = true;
+            }
+            else
+            {
+                // Move the bee
+                beeSprite.setPosition(beeSprite.getPosition().x - beeSpeed * dt.asSeconds(), beeSprite.getPosition().y);
+                if (beeSprite.getPosition().x < -100)
+                {
+                    beeActive = false;
+                }
+            }
         }
 
     }
